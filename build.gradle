@@ -7,7 +7,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.1.3'
         
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -19,7 +19,21 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {url "https://jitpack.io"}
     }
+}
+ext {
+    // Sdk and tools
+    minSdkVersion = 15
+    targetSdkVersion = 27
+    compileSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+    // Google Support
+    supportLibraryVersion = '27.1.1'
+    constraintlayoutVersion = '1.1.3'
+    junitVersion = '4.12'
+    // App dependencies
+   // eventbusVersion = '3.0.0'
 }
 
 task clean(type: Delete) {

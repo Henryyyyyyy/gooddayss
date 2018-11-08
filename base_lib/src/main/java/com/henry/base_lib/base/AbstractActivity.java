@@ -42,7 +42,10 @@ public abstract class AbstractActivity extends AppCompatActivity {
     protected void baseSetContentView() {
         setContentView(setContentView());
     }
-
+    public void dealOnForemost(Bundle savedInstanceState) {}
+    public abstract int setContentView();
+    protected abstract void bindViews(Bundle savedInstanceState);
+    protected abstract void initData();
 
 
     boolean isFirstEntry = true;
@@ -54,20 +57,6 @@ public abstract class AbstractActivity extends AppCompatActivity {
             isFirstEntry = false;
         }
     }
-
-
-
-    public void dealOnForemost(Bundle savedInstanceState) {
-
-    }
-
-    public abstract int setContentView();
-
-    protected abstract void bindViews(Bundle savedInstanceState);
-
-    protected abstract void initData();
-
-
 
 
 
@@ -113,7 +102,27 @@ public abstract class AbstractActivity extends AppCompatActivity {
         super.startActivity(intent);
         overridePendingTransition(R.anim.slide_right_to_left, R.anim.slide_old);
     }
+    /**
+     * 延迟某个时间执行某个任务
+     *
+     * @param action        Runnable对象
+     * @param delayMillis   延迟的时间
+     */
+    public boolean postDelayed(Runnable action, long delayMillis) {
+        return getWindow().getDecorView().postDelayed(action, delayMillis);
+    }
 
+    /**
+     * 删除某个延迟任务
+     * @param action        Runnable对象
+     */
+    public boolean removeCallbacks(Runnable action) {
+        if(getWindow().getDecorView() != null) {
+            return getWindow().getDecorView().removeCallbacks(action);
+        }else {
+            return true;
+        }
+    }
     @Override
     public final void finish() {
         super.finish();

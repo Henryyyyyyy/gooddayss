@@ -25,9 +25,6 @@
             android:ems="10"
             android:singleLine="true"
             android:textColor="@android:color/white" />
-
-
-
     </RelativeLayout>
 
     <ImageView

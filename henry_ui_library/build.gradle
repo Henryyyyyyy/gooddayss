@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-
+    buildToolsVersion rootProject.ext.buildToolsVersion
 
 
     defaultConfig {
@@ -10,7 +10,6 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -26,8 +25,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    api "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintlayoutVersion"
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.3'
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.3'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     api "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-
+    api "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    api "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintlayoutVersion"
 
 }

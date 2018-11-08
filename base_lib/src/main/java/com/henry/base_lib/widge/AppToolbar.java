@@ -1,40 +1,19 @@
 package com.henry.base_lib.widge;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.res.TypedArray;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.v4.view.ViewPager;
 
-import android.text.Editable;
 import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.AttributeSet;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.inputmethod.EditorInfo;
 import android.widget.AdapterView;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
-import android.widget.EditText;
-import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.henry.base_lib.R;
-import com.henry.base_lib.base.NoDoubleClickListener;
-import com.henry.base_lib.utils.ScreenUtils;
-import com.henry.base_lib.utils.SoftInputUtils;
-import com.henry.base_lib.utils.ToastUtils;
-import java.util.Arrays;
-import java.util.List;
+
 /**
  * Created by Henry.zengj on 2018/11/7
  */
@@ -86,18 +65,12 @@ public class AppToolbar extends LinearLayout {
         setTitle(mTitleString);
     }
 
-
     RelativeLayout mToolbarLayout;
-
     TextView mTitleView;
     LinearLayout mCustomViewLayout;
-
     ImageView mElevation;
-
     private void initView(View rootView) {
         mTitleView = (TextView) rootView.findViewById(R.id.tv_toolbar_title);
-
-
         mElevation = (ImageView) rootView.findViewById(R.id.elevation);
     }
 
