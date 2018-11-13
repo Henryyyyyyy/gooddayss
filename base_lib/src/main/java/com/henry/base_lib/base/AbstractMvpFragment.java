@@ -40,9 +40,9 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
     public void onResume() {
         super.onResume();
         resumeFlag = true;
-
         if (presenter != null && getUserVisibleHint() && !initSuccess) {
             presenter.onStart();
+            firstLoadData();
             initSuccess = true;
         }
     }
@@ -52,10 +52,17 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
         super.setUserVisibleHint(isVisibleToUser);
         if (!initSuccess && isVisibleToUser && presenter != null && resumeFlag) {
             presenter.onStart();
+            firstLoadData();
             initSuccess = true;
         }
     }
 
+    /**
+     * 首次fragment可见的时候加载数据
+     */
+    public void firstLoadData(){
+
+}
     /**
      * 当Activity和Fragment关联时，会回调此方法，将Activity的实例传递到此类中。
      *
@@ -140,7 +147,7 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
     @Override
     public Boolean isLoading() {
         return true;
-      //  return ((loadingView != null) && loadingView.isLoading());
+
     }
 
 
@@ -166,13 +173,6 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
     @Override
     public Boolean checkLoginStateAndLogin(int requestCode) {
         return true;
-//        boolean logined = LoginActionImpl.getInstance(getApplicationContext()).isLogined();
-//        if (!logined) {
-//            Intent intent = Router.prepare(getApplicationContext(), Router.getHost() + "/Login").getForwardIntent();
-//            if (intent != null) {
-//                startActivityForResult(intent, requestCode);
-//            }
-//        }
-//        return logined;
+
     }
 }

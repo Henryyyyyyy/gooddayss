@@ -20,12 +20,14 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     testImplementation "junit:junit:$rootProject.ext.junitVersion"
 
     implementation project(':base_lib')
     implementation project(':henry_ui_library')
-
+    //for banner demo
+    implementation "com.github.bumptech.glide:glide:3.7.0"
 
 }

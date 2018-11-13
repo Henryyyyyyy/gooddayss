@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">GoodDays</string>
+    <string name="it1">你好</string>
+    <string name="it2">这是</string>
+    <string name="it3">什么</string>
+    <string name="it4">东西</string>
 </resources>
