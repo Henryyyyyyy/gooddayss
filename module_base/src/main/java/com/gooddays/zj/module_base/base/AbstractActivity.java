@@ -6,6 +6,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.gooddays.zj.module_base.R;
 import com.gooddays.zj.module_base.utils.ScreenUtils;
 import com.gooddays.zj.module_base.utils.SoftInputUtils;
 import com.gooddays.zj.module_base.widge.AppToolbar;

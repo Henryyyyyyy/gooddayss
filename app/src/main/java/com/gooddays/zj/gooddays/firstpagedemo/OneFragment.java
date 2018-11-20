@@ -8,9 +8,10 @@ import android.widget.RelativeLayout;
 import com.gooddays.zj.gooddays.GoodDayApp;
 import com.gooddays.zj.gooddays.R;
 import com.gooddays.zj.gooddays.bannerdemo.GlideImageLoader;
-import com.henry.base_lib.base.AbstractMvpFragment;
-import com.henry.base_lib.base.BasePresent;
-import com.henry.base_lib.utils.ToastUtils;
+
+import com.gooddays.zj.module_base.base.AbstractMvpFragment;
+import com.gooddays.zj.module_base.base.BasePresent;
+import com.gooddays.zj.module_base.utils.ToastUtils;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 

@@ -5,7 +5,7 @@ import android.graphics.Color;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-
+import com.gooddays.zj.module_base.R;
 
 
 /**

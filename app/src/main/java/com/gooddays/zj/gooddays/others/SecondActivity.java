@@ -4,9 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import com.henry.base_lib.base.AbstractMvpActivity;
-import com.henry.base_lib.base.AbstractMvpFragment;
-import com.henry.base_lib.base.BasePresent;
+import com.gooddays.zj.module_base.base.AbstractMvpFragment;
+import com.gooddays.zj.module_base.base.BasePresent;
+
 
 public class SecondActivity extends AbstractMvpFragment {
 

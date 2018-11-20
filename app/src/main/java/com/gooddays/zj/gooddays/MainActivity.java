@@ -9,10 +9,11 @@ import com.gooddays.zj.gooddays.firstpagedemo.FourFragment;
 import com.gooddays.zj.gooddays.firstpagedemo.OneFragment;
 import com.gooddays.zj.gooddays.firstpagedemo.ThreeFragment;
 import com.gooddays.zj.gooddays.firstpagedemo.TwoFragment;
-import com.henry.base_lib.base.AbstractMvpActivity;
-import com.henry.base_lib.base.BasePresent;
-import com.zj.henry_ui_library.firstpageUI.AaaBottomIndicatorLayout;
-import com.zj.henry_ui_library.firstpageUI.AaaHomePager;
+import com.gooddays.zj.module_base.base.AbstractMvpActivity;
+import com.gooddays.zj.module_base.base.BasePresent;
+import com.gooddays.zj.module_ui.firstpageUI.AaaBottomIndicatorLayout;
+import com.gooddays.zj.module_ui.firstpageUI.AaaHomePager;
+
 
 import java.util.ArrayList;
 

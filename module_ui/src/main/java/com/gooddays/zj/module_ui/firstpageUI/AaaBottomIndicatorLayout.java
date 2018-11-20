@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
+import com.gooddays.zj.module_ui.R;
 
 import java.util.ArrayList;
 

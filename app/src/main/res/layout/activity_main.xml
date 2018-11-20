@@ -5,19 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.zj.henry_ui_library.firstpageUI.AaaHomePager
+    <com.gooddays.zj.module_ui.firstpageUI.AaaHomePager
         android:id="@+id/aaa_vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/aaa_indicator">
 
-    </com.zj.henry_ui_library.firstpageUI.AaaHomePager>
+    </com.gooddays.zj.module_ui.firstpageUI.AaaHomePager
+     >
 
-    <com.zj.henry_ui_library.firstpageUI.AaaBottomIndicatorLayout
+    <com.gooddays.zj.module_ui.firstpageUI.AaaBottomIndicatorLayout
         android:id="@+id/aaa_indicator"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentBottom="true">
 
-    </com.zj.henry_ui_library.firstpageUI.AaaBottomIndicatorLayout>
+    </com.gooddays.zj.module_ui.firstpageUI.AaaBottomIndicatorLayout>
 </RelativeLayout>
