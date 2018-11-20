@@ -1,1 +1,1 @@
-include ':app', ':base_lib', ':henry_ui_library', ':banner'
+include ':app', ':banner', ':module_ui', ':module_base'

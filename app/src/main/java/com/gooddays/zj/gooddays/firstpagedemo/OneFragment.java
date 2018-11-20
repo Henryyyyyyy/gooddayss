@@ -3,7 +3,7 @@ package com.gooddays.zj.gooddays.firstpagedemo;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AbsListView;
+import android.widget.RelativeLayout;
 
 import com.gooddays.zj.gooddays.GoodDayApp;
 import com.gooddays.zj.gooddays.R;
@@ -30,14 +30,20 @@ public class OneFragment extends AbstractMvpFragment implements OnBannerListener
     @Override
     protected void bindViews(View view, Bundle savedInstanceState) {
         banner =  mContext.findViewById(R.id.banner);
-        ArrayList<String>urls=new ArrayList<>();
 
+
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+        ArrayList<String>urls=new ArrayList<>();
         urls.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic1xjab4j30ci08cjrv.jpg");
         urls.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic21363tj30ci08ct96.jpg");
         urls.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic259ohaj30ci08c74r.jpg");
         urls.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2b16zuj30ci08cwf4.jpg");
         urls.add("http://ww4.sinaimg.cn/large/006uZZy8jw1faic2e7vsaj30ci08cglz.jpg");
-        banner.setLayoutParams(new AbsListView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, GoodDayApp.H / 4));
+        banner.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, GoodDayApp.H / 4));
         //简单使用
         banner.setImages(urls)
                 .setImageLoader(new GlideImageLoader())
