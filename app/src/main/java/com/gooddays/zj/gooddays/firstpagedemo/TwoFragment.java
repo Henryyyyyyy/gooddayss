@@ -1,6 +1,7 @@
 package com.gooddays.zj.gooddays.firstpagedemo;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.gooddays.zj.gooddays.R;
@@ -26,5 +27,11 @@ public class TwoFragment extends AbstractMvpFragment {
     @Override
     protected BasePresent newPresenter() {
         return null;
+    }
+
+    @Override
+    public void firstLoadData() {
+        super.firstLoadData();
+        Log.e("henry","twofragment:firstload");
     }
 }

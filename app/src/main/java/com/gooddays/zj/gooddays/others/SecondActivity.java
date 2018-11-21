@@ -16,6 +16,8 @@ public class SecondActivity extends AbstractMvpFragment {
         return 0;
     }
 
+
+
     @Override
     protected void bindViews(View view, Bundle savedInstanceState) {
 

@@ -2,6 +2,8 @@ package com.gooddays.zj.module_base.base;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -29,18 +31,19 @@ public abstract class AbstractFragment extends Fragment {
         mContext = null;
     }
 
+
+    public View mView;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(setContentView(), container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+       if (mView==null){
+           mView=inflater.inflate(setContentView(), container, false);
+           dealOnForemost(mView, savedInstanceState);
+           bindViews(mView, savedInstanceState);
+           initData();
+       }
+        return mView;
     }
 
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        dealOnForemost(view, savedInstanceState);
-        bindViews(view, savedInstanceState);
-        initData();
-    }
 
     protected void toastMessage(int msgRes) {
         if (mContext == null) {
@@ -60,6 +63,7 @@ public abstract class AbstractFragment extends Fragment {
     }
 
     public abstract int setContentView();
+
 
     protected abstract void bindViews(View view, Bundle savedInstanceState);
 

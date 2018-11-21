@@ -53,8 +53,7 @@ TextView tv_getdata;
         }
         long after = System.currentTimeMillis();
         Log.d("henry" ,"sharedpreferenced消耗时间为:"+(after-previous));
-        Log.d("henry" ,"sharedpreferenced拿到第40个数据为:"
-                +PreferenceManager.getDefaultSharedPreferences(this).getString(flag_sp+40,"0"));
+        Log.d("henry" ,"sharedpreferenced拿到第40个数据为:" +PreferenceManager.getDefaultSharedPreferences(this).getString(flag_sp+40,"0"));
 
 
     }

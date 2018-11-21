@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.CallSuper;
+import android.util.Log;
 
 
 import com.gooddays.zj.module_base.widge.LoadingView;
@@ -20,8 +21,8 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
     private LoadingView loadingView;
     protected Handler mHandler = new LeakHandler(this);
 
-    private boolean initSuccess = false;
-    private boolean resumeFlag = false;
+    protected boolean initSuccess = false;
+    protected boolean resumeFlag = false;
 
     @CallSuper
     @Override
@@ -33,19 +34,25 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
     public void onResume() {
         super.onResume();
         resumeFlag = true;
-        if (presenter != null && getUserVisibleHint() && !initSuccess) {
-            presenter.onStart();
+        if ( getUserVisibleHint() && !initSuccess) {
+            if (presenter!=null){
+                 presenter.onStart();
+                initSuccess = true;
+            }
             firstLoadData();
-            initSuccess = true;
         }
     }
 
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (!initSuccess && isVisibleToUser && presenter != null && resumeFlag) {
-            presenter.onStart();
+
+        if (!initSuccess && isVisibleToUser  && resumeFlag) {
+            if (presenter!=null){
+                presenter.onStart();
+            }
             firstLoadData();
+
             initSuccess = true;
         }
     }
@@ -104,6 +111,11 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
         }
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        initSuccess=false;
+    }
 
     @Override
     public void setResultAndFinish(int Result, Intent data) {
