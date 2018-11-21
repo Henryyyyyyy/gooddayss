@@ -36,7 +36,6 @@ public class OneFragment extends AbstractMvpFragment implements OnBannerListener
 
     @Override
     protected void bindViews(View view, Bundle savedInstanceState) {
-        Log.e("henry","onefragment:bindview");
         banner =  mView.findViewById(R.id.banner);
         tv_test_onefragment =  mView.findViewById(R.id.tv_test_onefragment);
         banner.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, GoodDayApp.H / 4));

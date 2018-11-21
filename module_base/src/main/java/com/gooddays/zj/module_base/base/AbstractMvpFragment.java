@@ -37,8 +37,8 @@ public abstract class AbstractMvpFragment<T extends BasePresent> extends Abstrac
         if ( getUserVisibleHint() && !initSuccess) {
             if (presenter!=null){
                  presenter.onStart();
-                initSuccess = true;
             }
+            initSuccess = true;
             firstLoadData();
         }
     }

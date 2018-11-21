@@ -5,7 +5,6 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.tencent.mmkv.MMKV;
 
 /**
  * Created by Henry.zengj on 2018/11/13.
@@ -22,8 +21,8 @@ public class GoodDayApp extends Application{
     }
 
     private void initMMKV() {
-        String path = MMKV.initialize(this);
-        Log.d("henry","mmkv path="+path);
+       // String path = MMKV.initialize(this);
+        //Log.d("henry","mmkv path="+path);
     }
 
     public void getScreen(Context aty) {
